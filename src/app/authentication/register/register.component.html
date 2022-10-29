@@ -1,0 +1,82 @@
+<div
+  class="container"
+  style="
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  "
+>
+  <h3><b>Login</b></h3>
+  <form nz-form [formGroup]="registerForm" class="login-form">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Email!">
+        <nz-input-group nzPrefixIcon="user">
+          <input
+            type="text"
+            nz-input
+            formControlName="email"
+            placeholder="Email"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Password!">
+        <nz-input-group nzPrefixIcon="lock">
+          <input
+            type="password"
+            nz-input
+            formControlName="password"
+            nz-input
+            placeholder="Password"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your First Name!">
+        <nz-input-group nzPrefixIcon="user">
+          <input
+            type="text"
+            nz-input
+            formControlName="firstname"
+            nz-input
+            placeholder="First Name"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Last Name!">
+        <nz-input-group nzPrefixIcon="user">
+          <input
+            type="text"
+            nz-input
+            formControlName="lastname"
+            nz-input
+            placeholder="Last Name"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <button
+      [disabled]="registerForm.invalid"
+      nz-button
+      class="login-form-button login-form-margin"
+      style="background-color: #4ba145; border: #4ba145"
+      (click)="onSubmit()"
+      [nzLoading]="isLoadingOne"
+    >
+      Register
+    </button>
+  </form>
+</div>
